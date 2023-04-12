@@ -6,5 +6,5 @@ const schema = mongoose.Schema({
   lastName: String,
   isAdmin: Boolean,
   bookList: [],
-}, {collection: 'tuits'});
+}, {collection: 'users'});
 export default schema;

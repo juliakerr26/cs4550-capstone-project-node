@@ -3,5 +3,5 @@ const schema = mongoose.Schema({
   admin: String,
   bookList: [],
   users: [],
-}, {collection: 'tuits'});
+}, {collection: 'bookclubs'});
 export default schema;
