@@ -1,5 +1,6 @@
 import bookClubsModel from './bookclubs-model.js';
-export const findBookclub = (id) => bookClubsModel.findById(id);
-export const createBookclub = (club) => bookClubsModel.create(club);
-export const deleteBookclub = (bid) => bookClubsModel.deleteOne({_id: bid});
-export const updateBookclub = (bid, club) => bookClubsModel.updateOne({_id: bid}, {$set: club})
+export const findBookClubs = () => bookClubsModel.findAll();
+export const findBookClubById = async id => await bookClubsModel.findById(id);
+export const createBookclub = async club => bookClubsModel.create(club);
+export const deleteBookclub = async id => bookClubsModel.deleteOne({ _id: id });
+export const updateBookclub = async (id, club) => bookClubsModel.updateOne({ _id: id }, { $set: club });

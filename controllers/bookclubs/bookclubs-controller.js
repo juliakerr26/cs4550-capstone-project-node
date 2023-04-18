@@ -12,6 +12,11 @@ const findBookClubs = async (req, res) => {
   res.json(bookClub);
 };
 
+const findBookClubById = async (req, res) => {
+  const bookClub = await bookClubsDao.findBookClubById(req.params.uid);
+  res.json(bookClub);
+}
+
 const updateBookClub = async (req, res) => {
   const bookClubIdToUpdate = req.params.bid;
   const updates = req.body;
