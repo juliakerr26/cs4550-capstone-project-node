@@ -32,7 +32,8 @@ const deleteBookClub = async (req, res) => {
 
 export default app => {
   app.post('/api/bookclubs', createBookClub);
-  app.get('/api/bookclubs/:bid', findBookClubs);
-  app.put('/api/bookclubs/:bid', updateBookClub);
-  app.delete('/api/bookclubs/:bid', deleteBookClub);
+  app.get('/api/bookclubs', findBookClubs);
+  app.get('/api/bookclubs/:id', findBookClubById)
+  app.put('/api/bookclubs/:id', updateBookClub);
+  app.delete('/api/bookclubs/:id', deleteBookClub);
 };
