@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import bookClubsSchema from './users-schema.js'
+import bookClubsSchema from './bookclubs-schema.js'
 const bookClubsModel = mongoose
 .model('BookclubModel', bookClubsSchema, 'bookclubs');
 export default bookClubsModel;
