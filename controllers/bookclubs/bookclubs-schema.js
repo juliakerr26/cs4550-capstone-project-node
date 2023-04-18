@@ -2,6 +2,6 @@ import mongoose from 'mongoose';
 const schema = mongoose.Schema({
   admin: String,
   bookList: [],
-  users: [],
+  members: [],
 }, {collection: 'bookclubs'});
 export default schema;
