@@ -9,6 +9,7 @@ const createBookClub = async (req, res) => {
 
 const findBookClubs = async (req, res) => {
   const bookClub = await bookClubsDao.findBookClubs();
+  console.log('bookclubfromdao:', bookClub);
   res.json(bookClub);
 };
 

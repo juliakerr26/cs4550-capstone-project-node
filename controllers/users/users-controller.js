@@ -1,5 +1,4 @@
 import * as usersDao from "./users-dao.js";
-import {findUserByCredentials} from "./users-dao.js";
 
 const createUser = async (req, res) => {
   const newUser = req.body;
@@ -10,12 +9,12 @@ const createUser = async (req, res) => {
 }
 
 const findAllUsers = async (req, res) => {
-  const users = await usersDao.findUser();
+  const users = await usersDao.findAllUsers();
   res.json(users);
 }
 
 const findUserById = async (req, res) => {
-  const user = await usersDao.findUser(req.params.uid);
+  const user = await usersDao.findUserById(req.params.uid);
   res.json(user);
 }
 

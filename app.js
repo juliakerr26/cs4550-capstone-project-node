@@ -4,7 +4,7 @@ import cors from 'cors';
 import BookclubsController
   from "./controllers/bookclubs/bookclubs-controller.js";
 import UsersController
-  from "./controllers/bookclubs/bookclubs-controller.js";
+  from "./controllers/users/users-controller.js";
 
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/BookClub';
 await mongoose.connect(CONNECTION_STRING);
