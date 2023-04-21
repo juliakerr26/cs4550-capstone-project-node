@@ -23,6 +23,11 @@ const findUserByUsername = async (req, res) => {
   res.json(user);
 }
 
+const searchUserByUsername = async (req, res) => {
+  const user = await usersDao.searchUserByUsername(req.params.username);
+  res.json(user);
+}
+
 const findUserByCredentials = async (req, res) => {
   const user = await usersDao.findUserByCredentials(req.params.username, req.params.password);
   res.json(user);
@@ -90,6 +95,7 @@ export default (app) => {
   app.get('/api/users', findAllUsers);
   app.get('/api/users/:uid', findUserById);
   app.get('/api/users/username/:username', findUserByUsername);
+  app.get('/api/users/username/search/:username', searchUserByUsername);
   app.get('/api/users/:username/:password', findUserByCredentials)
   app.put('/api/users/:uid', updateUser);
   app.delete('/api/users/:uid', deleteUser);
