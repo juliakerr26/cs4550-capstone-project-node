@@ -50,7 +50,7 @@ const deleteUser = async (req, res) => {
 }
 
 const login = async (req, res) => {
-  const user = await usersDao.findUserByCredentials(req.body);
+  const user = await usersDao.findUserByCredentials(req.body.username, req.body.password);
   if (user) {
     req.session["currentUser"] = user;
     res.json(user);
