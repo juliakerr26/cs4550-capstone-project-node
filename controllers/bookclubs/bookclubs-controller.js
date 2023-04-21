@@ -8,24 +8,23 @@ const createBookClub = async (req, res) => {
 
 const findBookClubs = async (req, res) => {
   const bookClub = await bookClubsDao.findBookClubs();
-  console.log('bookclubfromdao:', bookClub);
   res.json(bookClub);
 };
 
 const findBookClubById = async (req, res) => {
-  const bookClub = await bookClubsDao.findBookClubById(req.params.uid);
+  const bookClub = await bookClubsDao.findBookClubById(req.params.id);
   res.json(bookClub);
 }
 
 const updateBookClub = async (req, res) => {
-  const bookClubIdToUpdate = req.params.bid;
+  const bookClubIdToUpdate = req.params.id;
   const updates = req.body;
   const status = await bookClubsDao.updateBookClub(bookClubIdToUpdate, updates);
   res.json(status);
 };
 
 const deleteBookClub = async (req, res) => {
-  const bookClubIdToDelete = req.params.bid;
+  const bookClubIdToDelete = req.params.id;
   const status = await bookClubsDao.deleteBookClub(bookClubIdToDelete);
   res.json(status);
 };
@@ -33,7 +32,7 @@ const deleteBookClub = async (req, res) => {
 export default app => {
   app.post('/api/bookclubs', createBookClub);
   app.get('/api/bookclubs', findBookClubs);
-  app.get('/api/bookclubs/:id', findBookClubById)
+  app.get('/api/bookclubs/:id', findBookClubById);
   app.put('/api/bookclubs/:id', updateBookClub);
   app.delete('/api/bookclubs/:id', deleteBookClub);
 };

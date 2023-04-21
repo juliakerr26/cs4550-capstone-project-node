@@ -96,7 +96,7 @@ export default (app) => {
   app.get('/api/users/:uid', findUserById);
   app.get('/api/users/username/:username', findUserByUsername);
   app.get('/api/users/username/search/:username', searchUserByUsername);
-  app.get('/api/users/:username/:password', findUserByCredentials)
+  app.get('/api/users/:username/:password', findUserByCredentials);
   app.put('/api/users/:uid', updateUser);
   app.delete('/api/users/:uid', deleteUser);
 }
