@@ -2,7 +2,6 @@ import * as bookClubsDao from './bookclubs-dao.js';
 
 const createBookClub = async (req, res) => {
   const newBookClub = req.body;
-  newBookClub.bookList = [];
   const insertedBookClub = await bookClubsDao.createBookClub(newBookClub);
   res.json(insertedBookClub);
 };
