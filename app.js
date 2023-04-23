@@ -8,8 +8,7 @@ import UsersController
   from "./controllers/users/users-controller.js";
 
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/BookClub';
-await mongoose.connect('mongodb+srv://dbUser:kqogPRmw9YUw4AEP@cluster0.yiumt4r.mongodb.net/BookClub?retryWrites=true&w=majority');
-console.log('connected');
+await mongoose.connect(CONNECTION_STRING);
 
 const app = express();
 app.use(
