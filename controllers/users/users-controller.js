@@ -37,7 +37,7 @@ const updateUser = async (req, res) => {
   const userIdToUpdate = req.params.uid;
   const updates = req.body;
   const status = await usersDao
-  .updateTuit(userIdToUpdate,
+  .updateUser(userIdToUpdate,
       updates);
   res.json(status);
 }
